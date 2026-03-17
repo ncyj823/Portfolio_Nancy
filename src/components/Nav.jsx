@@ -55,7 +55,7 @@ export default function Nav() {
           className="hidden md:flex items-center gap-2 text-sm font-dm font-medium text-white bg-gradient-to-r from-[#7c3aed] to-[#2563eb] px-4 py-2 rounded-full hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-purple-500"
           aria-label="Download CV"
         >
-          <span>⬇</span> Download CV , href = "c:\Users\KIIT\Downloads\Nancy_resume.pdf.pdf"
+        
         </a>
 
         {/* Mobile hamburger */}
