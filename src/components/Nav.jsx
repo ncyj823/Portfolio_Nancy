@@ -31,7 +31,7 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#hero" className="font-syne font-black text-lg grad-text focus-visible:outline-purple-500">
-          Nancy.dev
+          Nancy
         </a>
 
         {/* Desktop links */}

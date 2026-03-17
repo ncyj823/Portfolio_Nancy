@@ -98,9 +98,9 @@ export default function Hero({ mouseNDC }) {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="block grad-text-tri font-syne font-semibold mb-5"
           style={{ fontSize: 'clamp(1.2rem, 3vw, 2rem)' }}
-          aria-label="AI Engineer and Full Stack Developer"
+          aria-label="CSE Sophomore at KIIT! 🎓"
         >
-          AI Engineer · Full Stack Developer
+          CSE Sophomore at KIIT! 🎓
         </motion.span>
 
         {/* Subtext */}
