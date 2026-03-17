@@ -2,7 +2,6 @@ import SectionReveal from '../components/SectionReveal';
 import { motion } from 'framer-motion';
 
 const stats = [
-  { num: '8.05', label: 'CGPA / 10' },
   { num: '19th', label: 'of 526 teams · SIH 2025' },
   { num: '3+', label: 'AI / ML Projects' },
   { num: '4+', label: 'Clubs & Communities' },
@@ -33,7 +32,7 @@ export default function About() {
         {/* Left — bio + chips */}
         <SectionReveal delay={0.1}>
           <p className="text-[rgba(232,234,246,0.6)] text-[0.97rem] font-dm font-light leading-8 mb-8">
-            I'm a <strong className="text-[rgba(232,234,246,0.9)] font-medium">Computer Science &amp; Engineering undergraduate at KIIT University</strong> (CGPA: 8.05/10)
+            I'm a <strong className="text-[rgba(232,234,246,0.9)] font-medium">Computer Science &amp; Engineering undergraduate at KIIT University</strong>
             with hands-on experience in <strong className="text-[rgba(232,234,246,0.9)] font-medium">AI, machine learning, and full-stack development</strong>.<br /><br />
             I've built an end-to-end AI video generation pipeline using <strong className="text-[rgba(232,234,246,0.9)] font-medium">LLMs, Stable Diffusion XL, RAG, and cloud GPU acceleration</strong>,
             developed a GPT-powered chatbot, and created a breast cancer classifier using scikit-learn.<br /><br />
