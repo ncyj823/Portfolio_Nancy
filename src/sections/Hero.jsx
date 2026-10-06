@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion';
 import { OrbitalPlanet } from '../components/SpaceCanvas';
 
-const badges = ['LLMs & RAG', 'Stable Diffusion XL', 'React.js', 'scikit-learn', 'MLSA · AWS Cloud Club'];
+const badges = ['Agentic AI', 'LangGraph', 'FastAPI', 'React.js', 'Full-Stack Dev'];
 
 export default function Hero({ mouseNDC }) {
   const heroRef = useRef();
@@ -98,9 +98,9 @@ export default function Hero({ mouseNDC }) {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="block grad-text-tri font-syne font-semibold mb-5"
           style={{ fontSize: 'clamp(1.2rem, 3vw, 2rem)' }}
-          aria-label="CSE Sophomore at KIIT! 🎓"
+          aria-label="CSE Junior at KIIT! 🎓"
         >
-          CSE Sophomore at KIIT! 🎓
+          CSE Junior at KIIT! 🎓
         </motion.span>
 
         {/* Subtext */}
@@ -154,8 +154,10 @@ export default function Hero({ mouseNDC }) {
             Get in touch
           </button>
           <a
-            href="/cv.pdf"
-            download="Nancy_CV.pdf"
+            href="/Nancy_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
             className="bg-transparent text-[rgba(232,234,246,0.6)] border border-[rgba(255,255,255,0.12)] font-dm font-medium px-8 py-3.5 rounded-full text-sm hover:text-white hover:border-[rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-purple-500 inline-flex items-center gap-2"
             aria-label="Download CV"
           >

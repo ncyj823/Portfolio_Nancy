@@ -9,6 +9,8 @@ const positions = [
 ];
 
 const certs = [
+  'B.Tech CSE — KIIT University · CGPA 8.07/10 · 2024–2028',
+  'LeetCode — 150+ problems solved',
   'Building Interactive Chatbot — Hack2skill Techcamp 2025',
   'MLSA Project Wing \'25',
   'AWS Cloud Club KIIT',

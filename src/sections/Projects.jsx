@@ -4,35 +4,61 @@ import SectionReveal from '../components/SectionReveal';
 
 const projects = [
   {
-    icon: '🎬',
-    title: 'AI Video Generation Pipeline',
-    desc: 'End-to-end system converting text prompts into fully narrated videos — script, visuals, audio, subtitles, and final assembly all automated.',
+    icon: '🔍',
+    title: 'Reviewly',
+    desc: 'Multi-agent PR reviewer — custom FastMCP server with 4 GitHub tools, parallel async Security/Code Quality/Test Coverage agents, Redis dedup + RQ webhooks.',
     tags: [
-      { label: 'LLM', color: 'pu' },
-      { label: 'Stable Diffusion XL', color: 'pu' },
-      { label: 'PyTorch', color: 'bl' },
+      { label: 'FastMCP', color: 'pu' },
+      { label: 'LangGraph', color: 'pu' },
+      { label: 'FastAPI', color: 'bl' },
+      { label: 'Redis', color: 'gr' },
+      { label: 'Docker', color: 'gr' },
+    ],
+    github: 'https://github.com/ncyj823/Reviewly',
+  },
+  {
+    icon: '🎬',
+    title: 'HRFilms',
+    desc: 'Full-stack cinema booking platform with real-time seat locking, Row-Level Security, JWT auth, and 12+ edge cases resolved.',
+    tags: [
+      { label: 'React', color: 'bl' },
+      { label: 'TypeScript', color: 'bl' },
+      { label: 'Supabase', color: 'pu' },
+      { label: 'Node.js', color: 'gr' },
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'RecoverAI',
+    desc: 'Multi-agent Razorpay payment recovery system powered by LangGraph, MCP tool-calling, Redis caching, and Docker deployment.',
+    tags: [
+      { label: 'LangGraph', color: 'pu' },
+      { label: 'MCP', color: 'pu' },
+      { label: 'Redis', color: 'gr' },
+      { label: 'Docker', color: 'gr' },
+    ],
+    live: 'https://recover-ai-svnk.onrender.com',
+    github: 'https://github.com/ncyj823/Recover-AI',
+  },
+  {
+    icon: '🎞️',
+    title: 'Forgetube',
+    desc: 'Text-to-video pipeline converting prompts into fully narrated videos using LLMs, Stable Diffusion XL, TTS, RAG grounding, and Modal GPU acceleration.',
+    tags: [
+      { label: 'LLMs', color: 'pu' },
+      { label: 'SDXL', color: 'pu' },
+      { label: 'TTS', color: 'bl' },
       { label: 'RAG', color: 'bl' },
-      { label: 'MoviePy', color: 'gr' },
       { label: 'Modal', color: 'gr' },
     ],
   },
   {
-    icon: '💬',
-    title: 'Interactive Credit Card Chatbot',
-    desc: 'GPT-powered chatbot assisting users with credit card FAQs, troubleshooting, and general assistance. Built at Hack2skill Techcamp 2025.',
-    tags: [
-      { label: 'React.js', color: 'bl' },
-      { label: 'GPT API', color: 'pu' },
-      { label: 'JavaScript', color: 'bl' },
-    ],
-  },
-  {
     icon: '🩺',
-    title: 'Breast Cancer Classifier',
-    desc: 'ML model classifying tumors as malignant or benign using the Wisconsin Breast Cancer Diagnostic dataset with Logistic Regression.',
+    title: 'Breast Cancer Classification',
+    desc: 'ML model classifying tumors as malignant or benign using the Wisconsin Breast Cancer Diagnostic dataset.',
     tags: [
-      { label: 'scikit-learn', color: 'gr' },
       { label: 'Python', color: 'bl' },
+      { label: 'scikit-learn', color: 'gr' },
       { label: 'NumPy', color: 'bl' },
       { label: 'Pandas', color: 'bl' },
     ],
@@ -70,7 +96,7 @@ function TiltCard({ project }) {
       transition={{ duration: 0.7, ease: [0.23, 1.23, 0.68, 1] }}
       whileHover={{ scale: 1.02 }}
       style={{ rotateX, rotateY, transformStyle: 'preserve-3d', perspective: 800 }}
-      className="relative bg-[rgba(255,255,255,0.025)] border border-[rgba(167,139,250,0.1)] rounded-2xl p-7 cursor-pointer overflow-hidden hover:border-[rgba(167,139,250,0.35)] hover:shadow-[0_24px_60px_rgba(124,58,237,0.2)] transition-[border-color,box-shadow] duration-300 group"
+      className="relative bg-[rgba(255,255,255,0.025)] border border-[rgba(167,139,250,0.1)] rounded-2xl p-7 cursor-pointer overflow-hidden hover:border-[rgba(167,139,250,0.35)] hover:shadow-[0_24px_60px_rgba(124,58,237,0.2)] transition-[border-color,box-shadow] duration-300 group flex flex-col"
       role="article"
       aria-label={`Project: ${project.title}`}
       tabIndex={0}
@@ -89,14 +115,42 @@ function TiltCard({ project }) {
         {project.icon}
       </span>
       <h3 className="font-syne font-bold text-lg text-white mb-3 relative z-10">{project.title}</h3>
-      <p className="text-[rgba(232,234,246,0.45)] text-sm font-dm font-light leading-7 mb-5 relative z-10">{project.desc}</p>
-      <div className="flex flex-wrap gap-2 relative z-10" aria-label="Technologies used">
+      <p className="text-[rgba(232,234,246,0.45)] text-sm font-dm font-light leading-7 mb-5 relative z-10 flex-grow">{project.desc}</p>
+      <div className="flex flex-wrap gap-2 relative z-10 mb-4" aria-label="Technologies used">
         {project.tags.map(t => (
           <span key={t.label} className={`text-[11px] px-2.5 py-1 rounded-full border font-medium font-dm ${tagStyles[t.color]}`}>
             {t.label}
           </span>
         ))}
       </div>
+
+      {/* Link buttons */}
+      {(project.live || project.github) && (
+        <div className="flex flex-wrap gap-2 relative z-10">
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] px-3 py-1.5 rounded-full border border-[rgba(167,139,250,0.3)] text-purple font-dm font-medium hover:bg-[rgba(167,139,250,0.1)] transition-colors duration-200"
+              onClick={(e) => e.stopPropagation()}
+            >
+              ↗ Live
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] px-3 py-1.5 rounded-full border border-[rgba(255,255,255,0.12)] text-[rgba(232,234,246,0.6)] font-dm font-medium hover:text-white hover:border-[rgba(255,255,255,0.3)] transition-colors duration-200"
+              onClick={(e) => e.stopPropagation()}
+            >
+              ↗ GitHub
+            </a>
+          )}
+        </div>
+      )}
     </motion.div>
   );
 }

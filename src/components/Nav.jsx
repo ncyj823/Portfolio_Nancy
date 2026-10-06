@@ -50,12 +50,14 @@ export default function Nav() {
 
         {/* CV Download */}
         <a
-          href="/cv.pdf"
-          download="Nancy_CV.pdf"
+          href="/Nancy_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          download
           className="hidden md:flex items-center gap-2 text-sm font-dm font-medium text-white bg-gradient-to-r from-[#7c3aed] to-[#2563eb] px-4 py-2 rounded-full hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-purple-500"
           aria-label="Download CV"
         >
-        
+          ⬇ CV
         </a>
 
         {/* Mobile hamburger */}
@@ -89,8 +91,10 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="/cv.pdf"
-              download="Nancy_CV.pdf"
+              href="/Nancy_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
               className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-white bg-gradient-to-r from-[#7c3aed] to-[#2563eb] px-5 py-2.5 rounded-full"
             >
               ⬇ Download CV
